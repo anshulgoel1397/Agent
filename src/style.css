@@ -27,6 +27,11 @@ body {
   color: var(--ink);
 }
 
+button,
+input {
+  font: inherit;
+}
+
 .calculator-shell {
   min-height: 100vh;
   display: grid;
@@ -99,7 +104,6 @@ input {
   border: 1px solid var(--line);
   border-radius: 8px;
   color: var(--ink);
-  font: inherit;
   padding: 0 14px;
   transition: border-color 160ms ease, box-shadow 160ms ease;
 }
@@ -110,17 +114,23 @@ input:focus {
   outline: none;
 }
 
+.button-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  margin-top: 8px;
+}
+
 button {
   height: 48px;
-  margin-top: 8px;
   border: 0;
   border-radius: 8px;
   background: var(--accent);
   color: white;
   cursor: pointer;
-  font: inherit;
   font-weight: 800;
-  transition: background 160ms ease, transform 160ms ease;
+  padding: 0 18px;
+  transition: background 160ms ease, opacity 160ms ease, transform 160ms ease;
 }
 
 button:hover {
@@ -129,6 +139,22 @@ button:hover {
 
 button:active {
   transform: translateY(1px);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+  transform: none;
+}
+
+.secondary-button {
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--ink);
+}
+
+.secondary-button:hover:not(:disabled) {
+  background: #f6f8fb;
 }
 
 .result-box {
@@ -168,6 +194,10 @@ button:active {
 
   .total-badge {
     width: 100%;
+  }
+
+  .button-row {
+    grid-template-columns: 1fr;
   }
 
   h1 {

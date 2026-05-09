@@ -4,37 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add Two Numbers</title>
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="calculator-shell" aria-labelledby="app-title">
-    <section class="calculator-panel">
-      <div class="heading-row">
-        <div>
-          <p class="eyebrow">Number Adder</p>
-          <h1 id="app-title">Add two numbers</h1>
-        </div>
-        <div class="total-badge" aria-label="Current result">
-          <span id="badgeValue">0</span>
-        </div>
-      </div>
-
-      <form id="adderForm" class="calculator-form" novalidate>
-        <label for="firstNumber">First number</label>
-        <input id="firstNumber" name="firstNumber" type="text" inputmode="decimal" placeholder="0" required>
-
-        <label for="secondNumber">Second number</label>
-        <input id="secondNumber" name="secondNumber" type="text" inputmode="decimal" placeholder="0" required>
-
-        <button type="submit">Add numbers</button>
-      </form>
-
-      <output id="result" class="result-box" aria-live="polite">
-        Enter two numbers to see their sum.
-      </output>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
